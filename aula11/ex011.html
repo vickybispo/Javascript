@@ -4,9 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>País</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            background-image: url('https://www.transparenttextures.com/patterns/white-waves.png');
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #ff0000; /* Vermelho */
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        main {
+            padding: 80px 20px 20px;
+        }
+        h1 {
+            color: #ff0000; /* Vermelho */
+            text-align: center;
+            margin-top: 0;
+        }
+        h2 {
+            color: #008000; /* Verde */
+            text-align: center;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+            border: 2px solid #008000; /* Verde */
+            border-radius: 4px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus {
+            border-color: #ff0000; /* Vermelho */
+        }
+        input[type="button"] {
+            background-color: #ff0000; /* Vermelho */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        input[type="button"]:hover {
+            background-color: #cc0000; /* Vermelho mais escuro */
+        }
+        #res {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #008000; /* Verde */
+            border-radius: 4px;
+            background-color: #ffffff;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+        #res.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-    <h1>De que País voce é?</h1>
-    <p></p>
+    <header>
+        <h1>De que País você é?</h1>
+    </header>
+    <main>
+        <p>O Serviço de Estrangeiros e Fronteiras de Portugal (SEF) divulgou esta semana os dados sobre imigração em 2022 no país e constata que o número de estrangeiros aumenta pelo sétimo ano consecutivo e já ultrapassa 750 mil. As comunidades que mais cresceram foram a brasileira e a indiana.</p>
+    
+        <p>Os dados do SEF mostram que Portugal registrou, no final do ano passado, 757.252 estrangeiros com residência no país, 58.365 mais (8,3%) do que em 2021. Os brasileiros mantêm-se como a principal comunidade estrangeira residente, num total de 233.138 pessoas, 28.444 mais do que em 2021 (13%).</p>
+        
+        <p>A paulista Bruna Niccolini se mudou para Portugal há seis meses e decidiu sair do Brasil pela segurança. “Eu já não aguentava mais viver trancada e queria ter uma vida mais livre, principalmente porque eu trabalhava no eixo Rio-São Paulo e não me sentia segura em momento algum”, conta.</p>
+        
+        <h2>Voce é Brasileiro ou Estrangeiro?</h2>
+        <input type="text" name="txt" id="txt" placeholder="Digite seu país de origem">
+        <input type="button" value="Verificar" onclick="verificar()">
+        <div id="res"></div>
+    </main>
+    <script>
+        function verificar() {
+            var txt = document.getElementById('txt').value;
+            var res = document.getElementById('res');
+            var pais = txt.toLowerCase();
+
+            if (pais === 'brasil' || pais === 'brasileiro') {
+                res.innerHTML = `<p>Você é Brasileiro</p>`;
+            } else {
+                res.innerHTML = `<p>Você é Estrangeiro</p>`;
+            }
+            res.innerHTML += `<p>Vivendo a melhor experiência da minha vida!</p>`;
+            res.classList.add('show');
+        }
+    </script>
 </body>
 </html>
+
