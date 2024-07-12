@@ -8,14 +8,30 @@ header {
     color: white;
     text-align: center;
 }
+#msg {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#foto {
+    margin-top: 20px;
+}
+
+#foto img {
+    width: 200px;
+    height: auto;
+}
 section {
     background-color: aliceblue;
     border-radius: 15px;
     padding: 20px;
     width: 500px;
     margin: auto;
-    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.268);
-   
+    box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.268);  
+}
+div {
+    text-align: center;
+    padding: 8px;
 }
 footer {
     color: white;
