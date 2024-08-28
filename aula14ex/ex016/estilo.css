@@ -1,15 +1,18 @@
 @charset "UTF-8";
 
 body {
-    background-color: rgb(19, 19, 62);
+    background-color: rgb(5, 5, 14);
     font-family: 'Courier New', Courier, monospace;
 }
 header {
     color: white;
     text-align: center;
 }
+h1 {
+    color: rgb(243, 47, 112);
+}
 section {
-    background-color: aliceblue;
+    background-color: rgb(255, 240, 251);
     border-radius: 15px;
     padding: 20px;
     width: 500px;
